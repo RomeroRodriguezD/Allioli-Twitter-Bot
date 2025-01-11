@@ -47,17 +47,6 @@ def open_x(driver, user, passwd):
     driver.get(web)
     driver.maximize_window()
 
-    # Accept cookies
-    try:
-        WebDriverWait(driver, 6).until(EC.visibility_of_element_located((By.XPATH, COOKIES)))
-        cookies = driver.find_element(By.XPATH, COOKIES)
-        cookies.click()
-        print('Cookies accepted.')
-    except:
-        print('No cookies popup detected.')
-
-    time.sleep(0.5)
-
     # Set username
     try:
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, USER_XPATH)))
