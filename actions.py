@@ -28,8 +28,10 @@ def kill_cookies(driver):
         cookies = driver.find_element(By.XPATH, COOKIES)
         cookies.click()
         print('Cookies accepted.')
-
-  def open_x(driver, user, passwd):
+    except:
+        print('No cookies popup detected.')
+        
+def open_x(driver, user, passwd):
     """Performs automatic login, as long as it doesn't ask you email + username + pwd, which happens
         after many automated logins in a short period.
     """
